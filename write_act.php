@@ -3,8 +3,8 @@ session_start();
 $connect = mysqli_connect("127.0.0.1", "ddcar03", "1234", "DB") or die("fail");
 
 $id = $_SESSION['userid'];                //Writer
-$title = $_POST['title'];               //Title
-$content = nl2br($_POST['content']);           //Content
+$title = htmlentities($_POST['title']);               //Title
+$content = htmlentities(nl2br($_POST['content']));           //Content
 $date = date('Y-m-d H:i:s');            //Date
 
 $tmpfile =  $_FILES['file']['tmp_name'];
